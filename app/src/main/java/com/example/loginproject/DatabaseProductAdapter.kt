@@ -40,7 +40,7 @@ class DatabaseProductAdapter (
 
                     productAdd.setOnClickListener{
                         val newQuantity= databaseHelper.readData()[item.productId-1].productQuantity + 1
-                        databaseHelper.updateData(DatabaseProduct(item.productId-1, item.productPrice, newQuantity))
+                        databaseHelper.updateData(DatabaseProduct(item.productId-1, item.productPrice, newQuantity, (item.productPrice* newQuantity)))
                         productQuantity.text = databaseHelper.readData()[item.productId-1].productQuantity.toString()
                         onQuantityChange(item , newQuantity)
                     }
@@ -50,7 +50,7 @@ class DatabaseProductAdapter (
                             if(databaseHelper.readData()[item.productId-1].productQuantity>1) {
                                 databaseHelper.readData()[item.productId-1].productQuantity - 1
                         }else { 1 }
-                        databaseHelper.updateData(DatabaseProduct(item.productId-1, item.productPrice, newQuantity))
+                        databaseHelper.updateData(DatabaseProduct(item.productId-1, item.productPrice, newQuantity, (item.productPrice* newQuantity)))
                         productQuantity.text = databaseHelper.readData()[item.productId-1].productQuantity.toString()
                         onQuantityChange(item , newQuantity)
                     }

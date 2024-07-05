@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">LoginProject</string>
+    <string name="SHOPPINGAPPLICATION">SHOPPING APPLICATION</string>
+    <string name="logginsuccessful">loggin successful</string>
+    <string name="Logout">Logout</string>
+    <string name="enteryourmailId">enter your email id</string>
+    <string name="Password">Password</string>
+    <string name="enterYourPassword">enter your password</string>
+    <string name="ForgotPassword">Forgot Password</string>
+    <string name="LOGIN">LOGIN</string>
+    <string name="idonthaveanAccount">I DON\'T HAVE AN ACCOUNT</string>
+    <string name="TotalBillAmount">Total Bill Amount</string>
 </resources>

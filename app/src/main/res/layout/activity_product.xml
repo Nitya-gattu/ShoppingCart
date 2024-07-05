@@ -5,43 +5,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card_view:cardCornerRadius="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    android:layout_marginRight="8dp"
-    card_view:cardElevation="5dp"  >
+    card_view:cardCornerRadius="@dimen/dp10"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginBottom="@dimen/dp8"
+    android:layout_marginRight="@dimen/dp8"
+    card_view:cardElevation="@dimen/dp8"  >
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#D7E0E4"
+    android:background="@color/card"
     android:orientation="vertical" >
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="100dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp200"
         android:src="@drawable/realmenarzo50"
         android:id="@+id/productImage"
         tools:ignore="MissingConstraints" />
 
 
     <TextView
-        android:layout_width="200dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/dp200"
+        android:layout_height="@dimen/sp30"
         android:text="title"
         android:id="@+id/productName"
         android:textSize="18sp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="@dimen/dp8"
         card_view:layout_constraintStart_toEndOf="@+id/productImage"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:layout_width="200dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/dp200"
+        android:layout_height="@dimen/sp30"
         android:text="price"
         android:id="@+id/productPrice"
         android:textSize="18sp"
-        android:layout_marginLeft="8dp"
+        android:textColor="@color/red"
+        android:layout_marginLeft="@dimen/dp8"
         card_view:layout_constraintStart_toEndOf="@+id/productName"
         tools:ignore="MissingConstraints" />
 
@@ -51,7 +52,7 @@
         android:text="discription"
         android:id="@+id/productDiscription"
         android:textSize="14sp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="@dimen/dp8"
         card_view:layout_constraintStart_toEndOf="@+id/productImage"
         card_view:layout_constraintTop_toBottomOf="@+id/productName"
         card_view:layout_constraintEnd_toEndOf="parent"
@@ -63,74 +64,57 @@
         android:text="unit price"
         android:id="@+id/productunit"
         android:textSize="18sp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp8"
         card_view:layout_constraintStart_toEndOf="@+id/productImage"
         card_view:layout_constraintTop_toBottomOf="@+id/productDiscription"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:layout_width="100dp"
+        android:layout_width="@dimen/dp100"
         android:layout_height="wrap_content"
         android:text="$ unit price"
         android:id="@+id/productunitPrice"
         android:textSize="18sp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="@dimen/dp8"
+        android:layout_marginTop="@dimen/dp8"
         card_view:layout_constraintTop_toBottomOf="@+id/productunit"
         card_view:layout_constraintStart_toEndOf="@+id/productImage"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/sp30"
+        android:layout_height="@dimen/sp30"
         android:src="@drawable/plusimage"
         android:id="@+id/productAdd"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/dp10"
         card_view:layout_constraintStart_toEndOf="@+id/productQuantity"
         card_view:layout_constraintTop_toBottomOf="@+id/productDiscription" />
 
 <androidx.appcompat.widget.AppCompatImageView
-    android:layout_width="30dp"
-    android:layout_height="30dp"
-    android:layout_marginBottom="10dp"
-    android:layout_marginTop="10dp"
+    android:layout_width="@dimen/sp30"
+    android:layout_height="@dimen/sp30"
+    android:layout_marginBottom="@dimen/dp10"
+    android:layout_marginTop="@dimen/dp10"
     android:id="@+id/productSub"
     android:src="@drawable/minusimage"
-    android:layout_marginLeft="8dp"
-
+    android:layout_marginLeft="@dimen/dp8"
     card_view:layout_constraintTop_toBottomOf="@+id/productDiscription"
     card_view:layout_constraintStart_toEndOf="@+id/productunit" />
 
-<!--    <TextView-->
-<!--        android:layout_width="20dp"-->
-<!--        android:layout_height="25dp"-->
-<!--        android:text="‒"-->
-<!--        android:textStyle="bold"-->
-<!--        android:gravity="center"-->
-<!--        android:textSize="30dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        android:layout_marginTop="0dp"-->
-<!--        android:id="@+id/productSub"-->
-<!--        card_view:layout_constraintTop_toBottomOf="@+id/productDiscription"-->
-<!--        card_view:layout_constraintStart_toEndOf="@+id/productunitPrice" />-->
 
     <TextView
-        android:layout_width="50dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/sp30"
         android:text="price"
         android:id="@+id/productQuantity"
-        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp10"
         card_view:layout_constraintStart_toEndOf="@+id/productSub"
         card_view:layout_constraintTop_toBottomOf="@+id/productDiscription" />
 
-<!--    <androidx.appcompat.widget.AppCompatImageView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:src="@drawable/baseline_add_24"-->
-<!--        android:id="@+id/productAdd"-->
-<!--        card_view:layout_constraintStart_toEndOf="@+id/productQuantity"-->
-<!--        card_view:layout_constraintTop_toBottomOf="@+id/productDiscription" />-->
+
 
 
 

@@ -27,13 +27,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="SHOPPING APPLICATION"
+        android:text="@string/SHOPPINGAPPLICATION"
         android:id="@+id/loginheader"
         android:textStyle="bold"
-        android:textSize="30sp"
+        android:textSize="@dimen/sp30"
         android:gravity="center"
         android:textColor="@color/white"
-        android:background="#2196F3"
+        android:background="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -49,7 +49,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Email id"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/dp10"
         android:id="@+id/emailtxt"
         app:layout_constraintStart_toEndOf="@+id/gV10"
         app:layout_constraintTop_toBottomOf="@+id/loginImage" />
@@ -58,8 +58,8 @@
         android:id="@+id/emailId"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="enter your email id"
-        android:minHeight="48dp"
+        android:hint="@string/enteryourmailId"
+        android:minHeight="@dimen/dp48"
         app:layout_constraintStart_toEndOf="@+id/gV10"
         app:layout_constraintTop_toBottomOf="@+id/emailtxt" />
 
@@ -67,7 +67,7 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:text="@string/Password"
         android:layout_marginTop="10dp"
         android:id="@+id/passwordtitle"
         app:layout_constraintStart_toEndOf="@+id/gV10"
@@ -77,18 +77,18 @@
         android:id="@+id/password"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:hint="enter your password"
-        android:minHeight="48dp"
+        android:hint="@string/enterYourPassword"
+        android:minHeight="@dimen/dp48"
         app:layout_constraintStart_toEndOf="@+id/gV10"
         app:layout_constraintTop_toBottomOf="@+id/passwordtitle" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Forgot Password"
-        android:layout_marginTop="10dp"
+        android:text="@string/ForgotPassword"
+        android:layout_marginTop="@dimen/dp10"
         android:id="@+id/forgotPass"
-        android:textColor="#E84D4D"
+        android:textColor="@color/red"
         app:layout_constraintStart_toEndOf="@+id/gV10"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
@@ -96,9 +96,9 @@
         android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:background="#2196F3"
-        android:text="LOGIN"
+        android:layout_marginTop="@dimen/dp50"
+        android:background="@color/blue"
+        android:text="@string/LOGIN"
         android:textColor="#212121"
         app:layout_constraintEnd_toStartOf="@+id/gV90"
         app:layout_constraintStart_toStartOf="@+id/gV10"
@@ -108,12 +108,12 @@
         android:id="@+id/noaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I DON'T HAVE AN ACCOUNT"
+        android:text="@string/idonthaveanAccount"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn"
         app:layout_constraintStart_toStartOf="@+id/gV10"
         app:layout_constraintEnd_toStartOf="@+id/gV90"
-        android:textColor="#E84D4D"/>
+        android:textColor="@color/red"/>
 
 
 

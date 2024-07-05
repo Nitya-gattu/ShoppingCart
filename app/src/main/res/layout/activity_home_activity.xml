@@ -5,50 +5,50 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    android:padding="10dp"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginBottom="@dimen/dp8"
+    android:padding="@dimen/dp10"
     tools:context=".HomeActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="SHOPPING APPLICATION"
+        android:text="@string/SHOPPINGAPPLICATION"
         android:id="@+id/loginheader"
         android:textStyle="bold"
-        android:textSize="30sp"
+        android:textSize="@dimen/sp30"
         android:gravity="center"
         android:textColor="@color/white"
-        android:background="#2196F3"
+        android:background="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
 
     <TextView
-        android:layout_width="350dp"
+        android:layout_width="@dimen/dp350"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:id="@+id/userEmail"
         app:layout_constraintTop_toBottomOf="@+id/loginheader"
-        android:text="loggin successful"
+        android:text="@string/logginsuccessful"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Logout"
+        android:text="@string/Logout"
         android:id="@+id/logout"
         app:layout_constraintStart_toEndOf="@+id/userEmail"
         app:layout_constraintTop_toBottomOf="@+id/loginheader"
-        android:textColor="#DF0000"/>
+        android:textColor="@color/red"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recyclerView"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10"
+        android:layout_marginLeft="@dimen/dp10"
         app:layout_constraintTop_toBottomOf="@+id/userEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

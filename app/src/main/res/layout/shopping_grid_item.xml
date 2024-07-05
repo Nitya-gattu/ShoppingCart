@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card_view:cardCornerRadius="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    android:layout_marginRight="8dp"
+    card_view:cardCornerRadius="@dimen/dp8"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginBottom="@dimen/dp8"
+    android:layout_marginRight="@dimen/dp8"
     card_view:cardElevation="5dp"  >
 
 
@@ -32,7 +32,7 @@
                 card_view:layout_constraintEnd_toEndOf="@+id/smartPhone"
                 card_view:layout_constraintStart_toStartOf="parent"
                 android:textStyle="bold"
-                android:textSize="20dp"
+                android:textSize="@dimen/sp20"
                 android:gravity="center" />
 
 

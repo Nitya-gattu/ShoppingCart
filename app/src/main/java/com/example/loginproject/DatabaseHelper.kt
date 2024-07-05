@@ -34,7 +34,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(
         val values  = ContentValues().apply {
             put(DatabaseConstants.COLUMN_PRICE, product.productPrice)
             put(DatabaseConstants.COLUMN_QUANTITY, product.productQuantity)
-            //put(DatabaseConstants.COLUMN_TOTAL_PRICE,product.totalPrice)
+            put(DatabaseConstants.COLUMN_TOTAL_PRICE,product.totalPrice)
 
         }
         return writableDatabase.insert(DatabaseConstants.TABLE_NAME, null, values)
@@ -45,7 +45,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(
         val values = ContentValues().apply {
             put(DatabaseConstants.COLUMN_PRICE,product.productPrice)
             put(DatabaseConstants.COLUMN_QUANTITY, product.productQuantity)
-            //put(DatabaseConstants.COLUMN_TOTAL_PRICE,product.totalPrice)
+            put(DatabaseConstants.COLUMN_TOTAL_PRICE,product.totalPrice)
         }
 
         val selection= "${DatabaseConstants.COLUMN_ID} = ?"
@@ -63,7 +63,7 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(
                 val quantity = getInt(getColumnIndexOrThrow(DatabaseConstants.COLUMN_QUANTITY)).toInt()
                 val totalPrice = getInt(getColumnIndexOrThrow(DatabaseConstants.COLUMN_TOTAL_PRICE))
 
-                productList.add(DatabaseProduct(productId = id, productPrice = price, productQuantity = quantity ))
+                productList.add(DatabaseProduct(productId = id, productPrice = price, productQuantity = quantity, totalPrice ))
             }
         }
         cursor.close()

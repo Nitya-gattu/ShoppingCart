@@ -4,5 +4,5 @@ data class DatabaseProduct(
     val productId:Int,
     val productPrice:Int,
     val productQuantity:Int,
-    //val totalPrice:Int
+    val totalPrice:Int
 )

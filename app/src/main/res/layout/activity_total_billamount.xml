@@ -5,32 +5,35 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
+    android:padding="15dp"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginBottom="@dimen/dp8"
+    android:layout_marginLeft="@dimen/dp8"
+    android:layout_marginRight="@dimen/dp8"
     tools:context=".activity_total_billamount">
 
     <TextView
         android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:text="Total Bill Amount"
-        android:textSize="20dp"
+        android:layout_height="@dimen/dp50"
+        android:text="@string/TotalBillAmount"
+        android:textSize="@dimen/dp20"
         android:textStyle="bold"
         android:id="@+id/txttotalBill"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginRight="20dp"
+        android:layout_width="80dp"
+        android:layout_height="@dimen/dp50"
+        android:layout_marginRight="@dimen/dp20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         android:id="@+id/totalBill"
         app:layout_constraintStart_toEndOf="@+id/txttotalBill"
         tools:layout_editor_absoluteY="0dp"
-        android:textColor="#EA7979"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        android:textStyle="bold"
         tools:text="$0"
         tools:ignore="MissingConstraints" />
 
@@ -55,6 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dp8"
         android:background="#82C2DF" />
 
 

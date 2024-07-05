@@ -46,24 +46,24 @@ class HomeActivity : AppCompatActivity() {
             shoppinitemType = "Smart Phones"
         ),
         ShoppingItem(
-            shoppingitemImage = R.drawable.smartphone,
-            shoppinitemType = "Smart Phones"
+            shoppingitemImage = R.drawable.laptop,
+            shoppinitemType = "Laptops"
         ),
         ShoppingItem(
-            shoppingitemImage = R.drawable.smartphone,
-            shoppinitemType = "Smart Phones"
+            shoppingitemImage = R.drawable.watch,
+            shoppinitemType = "Watch"
         ),
         ShoppingItem(
-            shoppingitemImage = R.drawable.smartphone,
-            shoppinitemType = "Smart Phones"
+            shoppingitemImage = R.drawable.womendress,
+            shoppinitemType = "Women Dresses"
         ),
         ShoppingItem(
-            shoppingitemImage = R.drawable.smartphone,
-            shoppinitemType = "Smart Phones"
+            shoppingitemImage = R.drawable.mendress,
+            shoppinitemType = "Men Dresses"
         ),
         ShoppingItem(
-            shoppingitemImage = R.drawable.smartphone,
-            shoppinitemType = "Smart Phones"
+            shoppingitemImage = R.drawable.jewelry,
+            shoppinitemType = "Jewelry"
         )
     )
 }

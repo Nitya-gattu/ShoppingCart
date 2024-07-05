@@ -28,7 +28,7 @@ class activity_total_billamount : AppCompatActivity() {
         addProducts()
         if(databaseHelper.readData().isEmpty()){
             products.forEach {product->
-                databaseHelper.insertData(DatabaseProduct(product.productId, product.productPrice,product.productQuantity))
+                databaseHelper.insertData(DatabaseProduct(product.productId, product.productPrice,product.productQuantity, (product.productPrice* product.productQuantity)))
             }
         }
 
@@ -60,7 +60,7 @@ class activity_total_billamount : AppCompatActivity() {
         val updatedProduct= product.copy(productQuantity = newQuantity)
         val position = products.indexOf(product)
         products[position] = updatedProduct
-        databaseHelper.updateData(DatabaseProduct(product.productId, product.productPrice, newQuantity))
+        databaseHelper.updateData(DatabaseProduct(product.productId, product.productPrice, newQuantity, (product.productPrice * newQuantity)))
         databaseProductAdapter.notifyItemChanged(position)
         updateTotalAmount(newPrice)
     }
