@@ -3,6 +3,7 @@ package com.example.loginproject
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -26,9 +27,10 @@ class HomeActivity : AppCompatActivity() {
         binding.userEmail.text = "Welcome $userEmail"
 
         binding.logout.setOnClickListener{
-            SecuredSharedPrefference.clearAllPreference()
-            startActivity(Intent(this@HomeActivity, MainActivity::class.java))
-            finish()
+
+            showLogoutDialog()
+
+
         }
 
         with(binding){
@@ -38,6 +40,27 @@ class HomeActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    private fun showLogoutDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.apply {
+            setTitle("Logout")
+            setMessage("are you sure you want to logout?")
+            setPositiveButton("Sure"){_,_ ->
+                SecuredSharedPrefference.clearAllPreference()
+                startActivity(Intent(this@HomeActivity, MainActivity::class.java))
+                finish()
+            }
+
+            setNegativeButton("cancel"){dialog,_ ->
+                dialog.dismiss()
+            }
+        }
+
+        val alertDialog:AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
     }
 
     val shoppingitems = mutableListOf(
