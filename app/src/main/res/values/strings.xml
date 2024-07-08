@@ -10,4 +10,7 @@
     <string name="LOGIN">LOGIN</string>
     <string name="idonthaveanAccount">I DON\'T HAVE AN ACCOUNT</string>
     <string name="TotalBillAmount">Total Bill Amount</string>
+    <string name="emailerrormessage">email Id is Null. enter vaild Email</string>
+    <string name="passwordErrorMessage">Password is null. enter valid Password </string>
+    <string name="message">check your email and Password</string>
 </resources>

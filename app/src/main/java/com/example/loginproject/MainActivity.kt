@@ -29,11 +29,37 @@ class MainActivity : AppCompatActivity() {
           val password = validEmailPassword()
                 if( emailId == null || password == null){
                     //Toast.makeText(this, "emailId or Password entered is not valid", Toast.LENGTH_SHORT).show()
-                    Snackbar.make(binding.loginBtn, "emailId or Password entered is not valid" , Snackbar.LENGTH_SHORT).setAction("cancel"){}.show()
+                   val snackbar = Snackbar.make(
+                       binding.main,
+                       R.string.message,
+                       Snackbar.LENGTH_INDEFINITE
+                   )
+                    snackbar.setAction("Check"){
+                        if(emailId == null && password == null){
+                            showSnackBar("Email Id and Password is Empty")
+                        }else {
+                            if (emailId == null) {
+                                showSnackBar("email Id is Null. enter vaild Email")
+                            }
+                            if (password == null) {
+                                showSnackBar("Password is null. enter valid Password")
+                            }
+                        }
+                    }
+                    snackbar.show()
                 }else {
                   savetheUserInfo(emailId,password)
                 }
         }
+
+    }
+
+    private fun showSnackBar(message: String) {
+        Snackbar.make(
+            binding.main,
+            message,
+            Snackbar.LENGTH_LONG
+        ).show()
 
     }
 
