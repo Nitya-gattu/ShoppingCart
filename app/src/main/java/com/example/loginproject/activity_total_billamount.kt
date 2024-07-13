@@ -92,7 +92,7 @@ class activity_total_billamount : AppCompatActivity() {
                     totalProductPrice = 440,
                     unit = "Unit Price",
                     productQuantity = 2,
-                    productImage = R.drawable.redminote111
+                    productImage = R.drawable.realmenarzo50
                 ),
                 ProductAttributes(
                     productName = "RealMe Narzo 70",
@@ -102,7 +102,7 @@ class activity_total_billamount : AppCompatActivity() {
                     totalProductPrice = 200,
                     unit = "Unit Price",
                     productQuantity = 1,
-                    productImage = R.drawable.realmenarzo70
+                    productImage = R.drawable.realmenarzo50
                 ),
                 ProductAttributes(
                     productName = "Redmi Note 5",
@@ -112,7 +112,7 @@ class activity_total_billamount : AppCompatActivity() {
                     totalProductPrice = 440,
                     unit = "Unit Price",
                     productQuantity = 2,
-                    productImage = R.drawable.redminote5
+                    productImage = R.drawable.realmenarzo50
                 )
             )
 

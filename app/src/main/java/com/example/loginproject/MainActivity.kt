@@ -6,10 +6,19 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.loginproject.databinding.ActivityMainBinding
+import com.example.loginproject.remote.ApiClient
+import com.example.loginproject.remote.ApiService
+import com.example.loginproject.userdata.login.GetUserLoginResponse
+import com.example.loginproject.userdata.login.SendUserLoginInfo
 import com.google.android.material.snackbar.Snackbar
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.create
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    val apiservice:ApiService = ApiClient.retrofit.create(ApiService::class.java)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -33,28 +42,79 @@ class MainActivity : AppCompatActivity() {
           val password = validEmailPassword()
                 if( emailId == null || password == null){
                     //Toast.makeText(this, "emailId or Password entered is not valid", Toast.LENGTH_SHORT).show()
-                   val snackbar = Snackbar.make(
-                       binding.main,
-                       R.string.message,
-                       Snackbar.LENGTH_INDEFINITE
-                   )
-                    snackbar.setAction("Check"){
-                        if(emailId == null && password == null){
-                            showSnackBar("Email Id and Password is Empty")
-                        }else {
-                            if (emailId == null) {
-                                showSnackBar("email Id is Null. enter vaild Email")
-                            }
-                            if (password == null) {
-                                showSnackBar("Password is null. enter valid Password")
-                            }
-                        }
-                    }
-                    snackbar.show()
+                    showValidationSnackbar(emailId, password)
                 }else {
-                  savetheUserInfo(emailId,password)
+
+                    loginUser(emailId, password)
+
+
                 }
         }
+
+    }
+
+    private fun loginUser(emailId: String, password: String) {
+        val userloginInfo =   SendUserLoginInfo(
+            emailId = emailId,
+            password = password
+        )
+        val call:Call<GetUserLoginResponse> = apiservice.getifLoginInfo(userloginInfo)
+
+        call.enqueue(object: Callback<GetUserLoginResponse>{
+            override fun onResponse(
+                call: Call<GetUserLoginResponse>,
+                response: Response<GetUserLoginResponse>
+            ) {
+                if(!response.isSuccessful){
+                    Toast.makeText(this@MainActivity, "some error" , Toast.LENGTH_LONG).show()
+                    return
+                }
+
+                val userinfo = response.body()
+                if (userinfo == null){
+                    Toast.makeText(this@MainActivity, "received empty response from error" , Toast.LENGTH_LONG).show()
+                    return
+                }
+
+                if(userinfo?.status != 0 ){
+                    Toast.makeText(this@MainActivity, userinfo?.message , Toast.LENGTH_LONG).show()
+                    //return
+                }
+
+                savetheUserInfo(emailId,password)
+
+
+
+            }
+
+            override fun onFailure(p0: Call<GetUserLoginResponse>, p1: Throwable) {
+                p1.printStackTrace()
+                Toast.makeText(this@MainActivity, "Unknown error" , Toast.LENGTH_LONG).show()
+            }
+
+        })
+    }
+
+    private fun showValidationSnackbar(emailId: String?, password: String?) {
+
+        val snackbar = Snackbar.make(
+            binding.main,
+            R.string.message,
+            Snackbar.LENGTH_INDEFINITE
+        )
+        snackbar.setAction("Check"){
+            if(emailId == null && password == null){
+                showSnackBar("Email Id and Password is Empty")
+            }else {
+                if (emailId == null) {
+                    showSnackBar("email Id is Null. enter vaild Email")
+                }
+                if (password == null) {
+                    showSnackBar("Password is null. enter valid Password")
+                }
+            }
+        }
+        snackbar.show()
 
     }
 

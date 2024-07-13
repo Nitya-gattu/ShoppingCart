@@ -12,30 +12,28 @@
     card_view:cardElevation="5dp"  >
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="190dp"
+                android:layout_height="@dimen/dp200"
+                android:scaleType="centerCrop"
                 android:src="@drawable/smartphone"
-                android:id="@+id/smartPhone"
+                android:id="@+id/categoryimg"
                 tools:ignore="MissingConstraints" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Smart Phones"
-                android:id="@+id/txtsmartPhone"
-                card_view:layout_constraintTop_toBottomOf="@+id/smartPhone"
-                card_view:layout_constraintEnd_toEndOf="@+id/smartPhone"
-                card_view:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/tv_categoryname"
                 android:textStyle="bold"
                 android:textSize="@dimen/sp20"
                 android:gravity="center" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -57,4 +57,7 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
     implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
+
+    //picasso for images
+    implementation ("com.squareup.picasso:picasso:2.71828")
 }
