@@ -7,7 +7,7 @@ import androidx.security.crypto.MasterKeys
 
 object SecuredSharedPrefference {
     private lateinit var sharedprefference :SharedPreferences
-    private const val SECURED_FILE_NAME = "encripted file"
+    private const val SECURED_FILE_NAME = "encriptedFile"
 
     const val USER_EMAIL =  "useremail"
     const val USER_PASSWORD = "userpassword"

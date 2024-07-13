@@ -13,4 +13,6 @@
     <string name="emailerrormessage">email Id is Null. enter vaild Email</string>
     <string name="passwordErrorMessage">Password is null. enter valid Password </string>
     <string name="message">check your email and Password</string>
+    <string name="register">REGISTER</string>
+    <string name="ihaveanAccount">I HAVE AN ACCOUNT</string>
 </resources>

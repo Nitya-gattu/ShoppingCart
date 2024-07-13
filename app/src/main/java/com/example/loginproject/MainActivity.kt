@@ -16,7 +16,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
         initview()
+        binding.noaccount.setOnClickListener{
+            startActivity(Intent(this , RegisterActivity::class.java))
+        }
     }
 
     private fun initview() {

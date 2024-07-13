@@ -51,4 +51,10 @@ dependencies {
 
     //dependency for securedsharedprefference
      implementation("androidx.security:security-crypto:1.0.0")
+
+    //dependency for retrofit
+    val retrofitVersion = "2.10.0"
+    implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
 }
