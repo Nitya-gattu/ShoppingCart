@@ -76,8 +76,8 @@ class MainActivity : AppCompatActivity() {
                     return
                 }
 
-                if(userinfo?.status != 0 ){
-                    Toast.makeText(this@MainActivity, userinfo?.message , Toast.LENGTH_LONG).show()
+                if(userinfo.status != 0 ){
+                    Toast.makeText(this@MainActivity, userinfo.message , Toast.LENGTH_LONG).show()
                     //return
                 }
 
