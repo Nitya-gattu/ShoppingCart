@@ -63,12 +63,6 @@
         app:layout_constraintTop_toBottomOf="@+id/searchContainer"
         android:textColor="@color/red"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/recycleContainer"
-        app:layout_constraintTop_toBottomOf="@+id/userEmail">
-
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,8 +70,8 @@
             android:layout_marginTop="@dimen/dp10"
             android:layout_marginRight="@dimen/dp10"
             android:layout_marginLeft="@dimen/dp10"
+            app:layout_constraintTop_toBottomOf="@+id/userEmail"
             tools:ignore="MissingConstraints" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
