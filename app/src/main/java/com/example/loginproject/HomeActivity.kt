@@ -26,6 +26,9 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         loadProducts()
+        binding.search.setOnClickListener {
+            supportFragmentManager.beginTransaction().add(R.id.searchContainer, SearchFragment()).commit()
+        }
     }
 
     private fun loadProducts() {

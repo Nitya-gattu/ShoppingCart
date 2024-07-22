@@ -1,6 +1,7 @@
 package com.example.loginproject.remote
 
 import com.example.loginproject.data.GetProductsCategory
+import com.example.loginproject.data.searchdata.GetSearchResponse
 import com.example.loginproject.data.subcategory.SubcategoryResponse
 import com.example.loginproject.data.subcategoryproducts.GetProductsListResponse
 import com.example.loginproject.userdata.GetUserRegResponse
@@ -41,4 +42,9 @@ interface ApiService {
     fun getProductsbySubCat(
         @Path ("sub_category_id") subcategoryId: String
     ):Call<GetProductsListResponse>
+
+    @GET("Product/search")
+    fun searchProducts(
+        @Query("query") searchtxt: String
+    ): Call<GetSearchResponse>
 }

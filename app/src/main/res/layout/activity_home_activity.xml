@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="@string/SHOPPINGAPPLICATION"
+        android:text="@string/SuperCart"
         android:id="@+id/loginheader"
         android:textStyle="bold"
         android:textSize="@dimen/sp30"
@@ -24,12 +24,33 @@
         tools:ignore="MissingConstraints" />
 
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp10"
+            android:text=" 🔍"
+            android:id="@+id/search"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="@dimen/sp30" />
+
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/searchContainer"
+        app:layout_constraintTop_toBottomOf="@+id/loginheader"
+        tools:text="search fragment"
+        tools:ignore="MissingConstraints" />
+
+
     <TextView
         android:layout_width="@dimen/dp350"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:id="@+id/userEmail"
-        app:layout_constraintTop_toBottomOf="@+id/loginheader"
+        app:layout_constraintTop_toBottomOf="@+id/searchContainer"
         android:text="@string/logginsuccessful"
         tools:ignore="MissingConstraints" />
 
@@ -39,16 +60,24 @@
         android:text="@string/Logout"
         android:id="@+id/logout"
         app:layout_constraintStart_toEndOf="@+id/userEmail"
-        app:layout_constraintTop_toBottomOf="@+id/loginheader"
+        app:layout_constraintTop_toBottomOf="@+id/searchContainer"
         android:textColor="@color/red"/>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recyclerView"
-        android:layout_marginTop="@dimen/dp10"
-        android:layout_marginRight="@dimen/dp10"
-        android:layout_marginLeft="@dimen/dp10"
-        app:layout_constraintTop_toBottomOf="@+id/userEmail" />
+        android:id="@+id/recycleContainer"
+        app:layout_constraintTop_toBottomOf="@+id/userEmail">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerView"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginLeft="@dimen/dp10"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
