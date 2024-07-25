@@ -10,7 +10,7 @@
     android:layout_marginBottom="@dimen/dp8"
     android:layout_marginLeft="@dimen/dp8"
     android:layout_marginRight="@dimen/dp8"
-    tools:context=".activity_total_billamount">
+    tools:context=".TotalBillActivity">
 
     <TextView
         android:layout_width="320dp"

@@ -1,13 +1,10 @@
 package com.example.loginproject.productadapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.loginproject.activity_total_billamount
 import com.example.loginproject.data.Category
 import com.example.loginproject.databinding.ShoppingGridItemBinding
-import com.squareup.picasso.Picasso
 
 class ShoppingItemAdapter(
     private val itemlist: List<Category>

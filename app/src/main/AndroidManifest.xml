@@ -25,7 +25,7 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_total_billamount"
+            android:name=".TotalBillActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"

@@ -1,10 +1,8 @@
 package com.example.loginproject.productadapter
 
 import android.content.Intent
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.loginproject.SubCategoryActivity
-import com.example.loginproject.activity_total_billamount
 import com.example.loginproject.data.Category
 import com.example.loginproject.databinding.ShoppingGridItemBinding
 import com.squareup.picasso.Picasso

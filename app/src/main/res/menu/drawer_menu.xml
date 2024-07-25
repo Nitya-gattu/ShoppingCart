@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<group android:checkableBehavior="single">
+
+    <item android:id="@+id/name"
+        android:title=""
+        tools:title="Name"/>
+
+    <item android:id="@+id/email"
+        android:title="welcome"/>
+
+    <item android:id="@+id/number"
+        android:title="number"/>
+
+</group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/menu_home"
+                android:title="Home"/>
+
+            <item
+                android:id="@+id/menu_cart"
+                android:title="Cart"/>
+
+            <item
+                android:id="@+id/menu_orders"
+                android:title="Orders"/>
+
+            <item
+                android:id="@+id/menu_logout"
+                android:title="Logout"/>
+
+
+        </menu>
+
+    </item>
+</menu>

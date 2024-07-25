@@ -2,15 +2,18 @@ package com.example.loginproject
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.loginproject.data.GetProductsCategory
 import com.example.loginproject.databinding.ActivityHomeActivityBinding
 import com.example.loginproject.productadapter.ShoppingItemAdapter
 import com.example.loginproject.remote.ApiClient
 import com.example.loginproject.remote.ApiService
+import com.google.android.material.navigation.NavigationView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,6 +22,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeActivityBinding
     val apiservice = ApiClient.retrofit.create(ApiService::class.java)
     lateinit var shoppingitemAdapter: ShoppingItemAdapter
+    lateinit var call:Call<GetProductsCategory>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,21 +30,69 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         loadProducts()
+        initViews()
         binding.search.setOnClickListener {
             supportFragmentManager.beginTransaction().add(R.id.searchContainer, SearchFragment()).commit()
         }
     }
 
-    private fun loadProducts() {
-       val userEmail = SecuredSharedPrefference.getString(SecuredSharedPrefference.USER_EMAIL)
-        binding.userEmail.text = "Welcome $userEmail"
-
-        binding.logout.setOnClickListener{
-
-            showLogoutDialog()
-
-
+    private fun initViews() {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.menu)
         }
+
+        binding.navMenu.setNavigationItemSelectedListener {
+            menuItems->
+            menuItems.isChecked = true
+            when(menuItems.itemId){
+                R.id.name->{
+
+                }
+                R.id.email ->{
+                    val userEmail = SecuredSharedPrefference.getString(SecuredSharedPrefference.USER_EMAIL)
+                    val navView:NavigationView = findViewById(R.id.navMenu)
+                    val menu = navView.menu
+                    val name = menu.findItem(R.id.email)
+                    name.title = "Welcome $userEmail"
+                }
+
+                R.id.number ->{
+
+                }
+
+                R.id.menu_home ->{
+                    startActivity(Intent(this, HomeActivity::class.java))
+                }
+                R.id.menu_cart ->{
+                    startActivity(Intent(this, TotalBillActivity::class.java))
+                }
+                R.id.menu_orders ->{
+
+                }
+                R.id.menu_logout ->{
+                    showLogoutDialog()
+                }
+            }
+            true
+        }
+
+
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == android.R.id.home){
+            if(binding.main.isDrawerOpen(GravityCompat.START)){
+                binding.main.closeDrawer(GravityCompat.START)
+            }else{
+                binding.main.openDrawer(GravityCompat.START)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+
+    }
+
+    private fun loadProducts() {
 
         val call:Call<GetProductsCategory> = apiservice.getProductCategory()
 
