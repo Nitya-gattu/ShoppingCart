@@ -11,6 +11,8 @@ object SecuredSharedPrefference {
 
     const val USER_EMAIL =  "useremail"
     const val USER_PASSWORD = "userpassword"
+    const val USER_FULLNAME ="fullname"
+    const val USER_MOBILENO ="mobileno"
     const val IS_USER_LOGGEDIN = "isloggedin"
 
     fun init(context:Context){

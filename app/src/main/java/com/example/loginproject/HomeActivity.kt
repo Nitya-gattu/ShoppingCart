@@ -29,39 +29,40 @@ class HomeActivity : AppCompatActivity() {
        binding = ActivityHomeActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val fullName = intent.getStringExtra("FULL_NAME")
+        val mobileNo = intent.getStringExtra("MOBILE_NO")
+
         loadProducts()
-        initViews()
+        initViews(fullName?:"", mobileNo?:"")
         binding.search.setOnClickListener {
             supportFragmentManager.beginTransaction().add(R.id.searchContainer, SearchFragment()).commit()
         }
     }
 
-    private fun initViews() {
+    private fun initViews(fullName:String, mobileNo:String ) {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.menu)
         }
 
+        //userEmail, name, mobile number setting on menu
+        val userEmail = SecuredSharedPrefference.getString(SecuredSharedPrefference.USER_EMAIL)
+        val navView:NavigationView = findViewById(R.id.navMenu)
+        val menu = navView.menu
+        val email = menu.findItem(R.id.email)
+        email.title = userEmail
+
+        val name = menu.findItem(R.id.name)
+        name.title = "Welcome ${fullName}"
+
+        val number = menu.findItem(R.id.number)
+        number.title = "+1 ${mobileNo}"
+
         binding.navMenu.setNavigationItemSelectedListener {
             menuItems->
             menuItems.isChecked = true
             when(menuItems.itemId){
-                R.id.name->{
-
-                }
-                R.id.email ->{
-                    val userEmail = SecuredSharedPrefference.getString(SecuredSharedPrefference.USER_EMAIL)
-                    val navView:NavigationView = findViewById(R.id.navMenu)
-                    val menu = navView.menu
-                    val name = menu.findItem(R.id.email)
-                    name.title = "Welcome $userEmail"
-                }
-
-                R.id.number ->{
-
-                }
-
                 R.id.menu_home ->{
                     startActivity(Intent(this, HomeActivity::class.java))
                 }

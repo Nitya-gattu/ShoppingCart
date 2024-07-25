@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initview() {
-
         checkIfUserLoggedIn()
 
         binding.loginBtn.setOnClickListener{
@@ -78,10 +77,11 @@ class MainActivity : AppCompatActivity() {
 
                 if(userinfo.status != 0 ){
                     Toast.makeText(this@MainActivity, userinfo.message , Toast.LENGTH_LONG).show()
-                    //return
+                    return
                 }
 
-                savetheUserInfo(emailId,password)
+                Toast.makeText(this@MainActivity, "login Successfully" , Toast.LENGTH_LONG).show()
+                savetheUserInfo(emailId,password, userinfo.user.fullName, userinfo.user.mobileNo)
 
 
 
@@ -127,7 +127,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun savetheUserInfo(emailId: String, password: String) {
+    private fun savetheUserInfo(emailId: String, password: String, fullName:String, mobileNo:String) {
         SecuredSharedPrefference.saveString(
             SecuredSharedPrefference.USER_EMAIL,
             emailId
@@ -137,12 +137,18 @@ class MainActivity : AppCompatActivity() {
             SecuredSharedPrefference.USER_PASSWORD,
             password
         )
+        SecuredSharedPrefference.saveString(
+            SecuredSharedPrefference.USER_FULLNAME,
+            fullName
+        )
+        SecuredSharedPrefference.saveString(SecuredSharedPrefference.USER_MOBILENO,
+            mobileNo)
 
         SecuredSharedPrefference.saveBooleanAndGetStatus(
             SecuredSharedPrefference.IS_USER_LOGGEDIN,
             true
         )
-        moveTODashBoardScreen()
+        moveTODashBoardScreen(fullName, mobileNo)
     }
 
     private fun checkIfUserLoggedIn() {
@@ -150,12 +156,17 @@ class MainActivity : AppCompatActivity() {
             SecuredSharedPrefference.IS_USER_LOGGEDIN
         )
         if(ifUserLoggedin){
-            moveTODashBoardScreen()
+            val fullname = SecuredSharedPrefference.getString(SecuredSharedPrefference.USER_FULLNAME)
+            val mobileNo = SecuredSharedPrefference.getString(SecuredSharedPrefference.USER_MOBILENO)
+            moveTODashBoardScreen(fullname, mobileNo)
         }
     }
 
-    private fun moveTODashBoardScreen() {
-        val intentobj= Intent(this, HomeActivity::class.java)
+    private fun moveTODashBoardScreen(fullName:String, mobileNo:String) {
+        val intentobj= Intent(this, HomeActivity::class.java).apply {
+            putExtra("FULL_NAME", fullName)
+            putExtra("MOBILE_NO", mobileNo)
+        }
         //intentobj.putExtra(constant.LOGINSUCCESS, "loginsuccess")
         startActivity(intentobj)
         finish()
