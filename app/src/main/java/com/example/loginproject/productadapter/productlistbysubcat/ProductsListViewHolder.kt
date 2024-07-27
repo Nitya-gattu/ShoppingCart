@@ -1,12 +1,15 @@
 package com.example.loginproject.productadapter.productlistbysubcat
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.loginproject.DatabaseHelper
 import com.example.loginproject.DatabaseProduct
 import com.example.loginproject.R
+import com.example.loginproject.SubCategoryActivity
 import com.example.loginproject.data.subcategoryproducts.Product
 import com.example.loginproject.databinding.ActivitySubcategoryitemBinding
+import com.example.loginproject.subcategory.details.DetailsActivity
 import com.squareup.picasso.Picasso
 
 class ProductsListViewHolder(
@@ -38,6 +41,13 @@ class ProductsListViewHolder(
 
                 databaseHelper.insertData(cartItem)
                 Toast.makeText(binding.root.context, "${product.product_name} added to cart", Toast.LENGTH_SHORT).show()
+            }
+
+            root.setOnClickListener {
+                val context = it.context
+                val intent = Intent(context, DetailsActivity::class.java)
+                intent.putExtra("productId" , product.product_id)
+                context.startActivity(intent)
             }
 
         }

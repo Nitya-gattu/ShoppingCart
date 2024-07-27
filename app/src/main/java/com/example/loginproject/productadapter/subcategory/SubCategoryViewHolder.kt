@@ -27,6 +27,7 @@ class SubCategoryViewHolder(
                 val context = it.context
                 val intent = Intent(context, SubCategoryProductListActivity::class.java)
                 intent.putExtra("subCategoryId" , item.subcategory_id)
+                intent.putExtra("subCategoryName", item.subcategory_name)
                 context.startActivity(intent)
             }
         }

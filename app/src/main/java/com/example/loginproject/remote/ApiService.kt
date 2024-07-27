@@ -10,6 +10,7 @@ import com.example.loginproject.data.subcategory.SubcategoryResponse
 import com.example.loginproject.data.subcategoryproducts.GetProductsListResponse
 import com.example.loginproject.orders.model.GetOrdersResponse
 import com.example.loginproject.orders.model.specificorder.GetSpecificOrderResponse
+import com.example.loginproject.subcategory.details.data.GetDataResponse
 import com.example.loginproject.userdata.GetUserRegResponse
 import com.example.loginproject.userdata.UserRegInfo
 import com.example.loginproject.userdata.login.GetUserLoginResponse
@@ -75,5 +76,10 @@ interface ApiService {
     fun getOrderItems(
         @Query("order_id") orderId: Int
     ): Call<GetSpecificOrderResponse>
+
+    @GET("Product/details/{product_id}")
+    fun getDetails(
+        @Path("product_id") productId:Int
+    ):Call<GetDataResponse>
 
 }

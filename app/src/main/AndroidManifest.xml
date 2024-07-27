@@ -16,6 +16,9 @@
         android:theme="@style/Theme.LoginProject"
         tools:targetApi="31">
         <activity
+            android:name=".subcategory.details.DetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".orders.view.specificorder.SpecificOrderActivity"
             android:exported="false" />
         <activity

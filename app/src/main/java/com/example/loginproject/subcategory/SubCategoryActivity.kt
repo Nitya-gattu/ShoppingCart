@@ -28,6 +28,8 @@ class SubCategoryActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val categoryId = intent.getStringExtra("categoryId" ) ?: return
+        val categoryName = intent.getStringExtra("subCategoryName") ?: "Sub Category"
+        binding.loginheader.text = categoryName
         loadSubCategory(categoryId)
 
 
