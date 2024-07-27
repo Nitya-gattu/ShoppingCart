@@ -8,4 +8,8 @@ object DatabaseConstants {
     const val COLUMN_PRICE = "price"
     const val COLUMN_QUANTITY = "quantity"
     const val COLUMN_TOTAL_PRICE = "totalprice"
+
+    const val COLUMN_NAME = "name"
+    const val COLUMN_DESCRIPTION = "discription"
+
 }

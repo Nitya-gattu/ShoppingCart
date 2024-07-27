@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -60,4 +61,15 @@ dependencies {
 
     //picasso for images
     implementation ("com.squareup.picasso:picasso:2.71828")
+
+    //dependency for room
+    implementation ("androidx.room:room-runtime:2.4.2")
+    kapt("androidx.room:room-compiler:2.4.2" )
+    annotationProcessor("androidx.room:room-compiler:2.4.2")
+
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation ("androidx.fragment:fragment-ktx:1.8.1")
+
+
+    implementation(kotlin("script-runtime"))
 }

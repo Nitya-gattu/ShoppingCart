@@ -1,8 +1,10 @@
 package com.example.loginproject
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.loginproject.checkout.CheckoutActivity
 import com.example.loginproject.databinding.ActivityTotalBillamountBinding
 
 class TotalBillActivity : AppCompatActivity() {
@@ -21,17 +23,21 @@ class TotalBillActivity : AppCompatActivity() {
 
         //initializing databasehelper
         databaseHelper = DatabaseHelper(this)
-        addProducts()
-        if(databaseHelper.readData().isEmpty()){
-            products.forEach {product->
-                databaseHelper.insertData(DatabaseProduct(product.productId, product.productPrice,product.productQuantity, (product.productPrice* product.productQuantity)))
-            }
-        }
+        //addProducts()
+//        if(databaseHelper.readData().isEmpty()){
+//            products.forEach {product->
+//                databaseHelper.insertData(DatabaseProduct(product.productId, product.productPrice,product.productQuantity, (product.productPrice* product.productQuantity)))
+//            }
+//        }
 
-        dproducts.addAll(databaseHelper.readData())
+       // dproducts.addAll(databaseHelper.readData())
        // databaseProductAdapter = DatabaseProductAdapter()
 
         initviews()
+        updateTotalAmount()
+        totalBillamountBinding.checkout.setOnClickListener {
+            startActivity(Intent(this, CheckoutActivity::class.java))
+        }
 
 
 
@@ -39,6 +45,7 @@ class TotalBillActivity : AppCompatActivity() {
 
     private fun initviews() {
         totalBillamountBinding.recyclerView.layoutManager = LinearLayoutManager(this)
+        val products = databaseHelper.readData()
         databaseProductAdapter =DatabaseProductAdapter(products, databaseHelper){product, newQuantity ->
             updateProductQuantity(product,newQuantity)
 
@@ -47,25 +54,34 @@ class TotalBillActivity : AppCompatActivity() {
         totalBillamountBinding.recyclerView.adapter = databaseProductAdapter
     }
 
-    private fun updateProductQuantity(product: ProductAttributes , newQuantity:Int){
-        val list = databaseHelper.readData()
-        var newPrice = 0
-        list.forEach{
-            newPrice+= it.productPrice*it.productQuantity
-        }
-        val updatedProduct= product.copy(productQuantity = newQuantity)
-        val position = products.indexOf(product)
-        products[position] = updatedProduct
-        databaseHelper.updateData(DatabaseProduct(product.productId, product.productPrice, newQuantity, (product.productPrice * newQuantity)))
-        databaseProductAdapter.notifyItemChanged(position)
-        updateTotalAmount(newPrice)
+    private fun updateProductQuantity(product: DatabaseProduct , newQuantity:Int){
+//        val list = databaseHelper.readData()
+//        var newPrice = 0
+//        list.forEach{
+//            newPrice+= it.productPrice*it.productQuantity
+//        }
+        val updatedProduct= product.copy(productQuantity = newQuantity, totalPrice = product.productPrice* newQuantity)
+        databaseHelper.updateData(updatedProduct)
+        databaseProductAdapter.updateProduct(updatedProduct)
+        updateTotalAmount()
+       // val position = products.indexOf(product)
+            //products[position] = updatedProduct
+        //databaseHelper.updateData(DatabaseProduct(product.productId, product.productPrice, newQuantity, (product.productPrice * newQuantity)))
+        //databaseProductAdapter.notifyItemChanged(position)
+        //updateTotalAmount(newPrice)
     }
 
-    private fun updateTotalAmount(newPrice : Int) {
-        val totalAmount = newPrice
-        totalBillamountBinding.totalBill.text = "$ $totalAmount"
-
+    private fun updateTotalAmount(){
+        val products = databaseHelper.readData()
+        val totalAmount = products.sumOf { it.totalPrice }
+        totalBillamountBinding.totalBill.text = "$ ${totalAmount}"
     }
+
+//    private fun updateTotalAmount(newPrice : Int) {
+//        val totalAmount = newPrice
+//        totalBillamountBinding.totalBill.text = "$ $totalAmount"
+//
+//    }
 
 
     private fun addProducts() {

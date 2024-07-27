@@ -76,6 +76,7 @@
         <TextView
             android:layout_width="@dimen/dp100"
             android:layout_height="wrap_content"
+            android:id="@+id/addToCart"
             android:text="Add To cart"
             android:layout_marginTop="@dimen/dp8"
             android:textColor="@color/blue"

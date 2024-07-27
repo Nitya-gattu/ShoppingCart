@@ -19,7 +19,10 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(
             ${DatabaseConstants.COLUMN_ID} INTEGER PRIMARY KEY AUTOINCREMENT,
             ${DatabaseConstants.COLUMN_PRICE} TEXT,
             ${DatabaseConstants.COLUMN_QUANTITY} INTEGER,
-            ${DatabaseConstants.COLUMN_TOTAL_PRICE} INTEGER
+            ${DatabaseConstants.COLUMN_TOTAL_PRICE} INTEGER,
+            
+            ${DatabaseConstants.COLUMN_NAME} TEXT,
+            ${DatabaseConstants.COLUMN_DESCRIPTION} TEXT
             )
         """.trimIndent()
         database!!.execSQL(createTableQuery)
@@ -35,6 +38,9 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(
             put(DatabaseConstants.COLUMN_PRICE, product.productPrice)
             put(DatabaseConstants.COLUMN_QUANTITY, product.productQuantity)
             put(DatabaseConstants.COLUMN_TOTAL_PRICE,product.totalPrice)
+
+            put(DatabaseConstants.COLUMN_NAME, product.productName)
+            put(DatabaseConstants.COLUMN_DESCRIPTION, product.productDescription)
 
         }
         return writableDatabase.insert(DatabaseConstants.TABLE_NAME, null, values)
@@ -63,7 +69,10 @@ class DatabaseHelper(context: Context):SQLiteOpenHelper(
                 val quantity = getInt(getColumnIndexOrThrow(DatabaseConstants.COLUMN_QUANTITY)).toInt()
                 val totalPrice = getInt(getColumnIndexOrThrow(DatabaseConstants.COLUMN_TOTAL_PRICE))
 
-                productList.add(DatabaseProduct(productId = id, productPrice = price, productQuantity = quantity, totalPrice ))
+                val name = getString(getColumnIndexOrThrow(DatabaseConstants.COLUMN_NAME))
+                val description = getString(getColumnIndexOrThrow(DatabaseConstants.COLUMN_DESCRIPTION))
+
+                productList.add(DatabaseProduct(productId = id, productPrice = price, productQuantity = quantity, totalPrice = totalPrice, productName = name, productDescription = description))
             }
         }
         cursor.close()

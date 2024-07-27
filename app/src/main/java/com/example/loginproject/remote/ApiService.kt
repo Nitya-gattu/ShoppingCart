@@ -1,5 +1,7 @@
 package com.example.loginproject.remote
 
+import com.example.loginproject.checkout.checkoutfragments.model.AddDeliveryAddress
+import com.example.loginproject.checkout.checkoutfragments.model.GetDeliveryResponse
 import com.example.loginproject.data.GetProductsCategory
 import com.example.loginproject.data.searchdata.GetSearchResponse
 import com.example.loginproject.data.subcategory.SubcategoryResponse
@@ -47,4 +49,10 @@ interface ApiService {
     fun searchProducts(
         @Query("query") searchtxt: String
     ): Call<GetSearchResponse>
+
+    @Headers("Content-type: application/json")
+    @POST("User/address")
+    fun addAddress(
+        @Body deliveryAddress: AddDeliveryAddress
+    ): Call<GetDeliveryResponse>
 }

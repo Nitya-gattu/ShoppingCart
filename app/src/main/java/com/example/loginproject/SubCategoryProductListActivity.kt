@@ -19,6 +19,7 @@ import retrofit2.Response
 class SubCategoryProductListActivity : AppCompatActivity() {
     lateinit var binding: ActivitySubCategoryProductListBinding
     val apiService = ApiClient.retrofit.create(ApiService::class.java)
+    lateinit var databaseHelper: DatabaseHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,6 +27,7 @@ class SubCategoryProductListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        databaseHelper = DatabaseHelper(this)
 
         val subcategoryId = intent.getStringExtra("subCategoryId") ?: return
         loadProductList(subcategoryId)
@@ -62,7 +64,7 @@ class SubCategoryProductListActivity : AppCompatActivity() {
                 }catch (e: Exception){
                     Toast.makeText(this@SubCategoryProductListActivity, "Empty List of products" , Toast.LENGTH_LONG).show()
                 }
-                val adapter = ProductsListAdapter(productslist.products)
+                val adapter = ProductsListAdapter(productslist.products, databaseHelper)
                 binding.recyclerView.adapter = adapter
 
 

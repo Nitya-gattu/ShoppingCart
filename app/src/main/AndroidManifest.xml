@@ -16,6 +16,9 @@
         android:theme="@style/Theme.LoginProject"
         tools:targetApi="31">
         <activity
+            android:name=".checkout.CheckoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".SubCategoryProductListActivity"
             android:exported="false" />
         <activity
