@@ -9,7 +9,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/dp60"
         android:text="@string/register"
         android:id="@+id/loginheader"
         android:textStyle="bold"
@@ -20,12 +20,12 @@
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        android:layout_width="290dp"
+        android:layout_width="@dimen/dp290"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="@dimen/dp60"
+        android:layout_marginRight="@dimen/dp60"
+        android:layout_marginTop="@dimen/dp60"
+        android:layout_marginBottom="@dimen/dp60"
 
         android:orientation="vertical" >
 
@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Full Name" />
+            android:text="@string/FullName" />
 
         <EditText
             android:id="@+id/et_fullName"
@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="@dimen/dp20"
             android:layout_height="wrap_content"
-            android:text="Mobile No" />
+            android:text="@string/mobileNo" />
 
         <EditText
             android:layout_width="match_parent"
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp20"
-            android:text="Email Id" />
+            android:text="@string/emailId" />
 
         <EditText
             android:layout_width="match_parent"
@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp20"
-            android:text="Password" />
+            android:text="@string/Password" />
 
         <EditText
             android:layout_width="match_parent"

@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="total bill amount"
+            android:text="@string/TotalBillAmount"
             android:layout_marginTop="20dp"
             android:id="@+id/title"
             android:textSize="30dp"
@@ -24,10 +24,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/totalBill"
-            android:textSize="30dp"
+            android:textSize="@dimen/sp30"
             tools:text="total"
             android:textColor="@color/red"
-            android:layout_marginLeft="18dp"
+            android:layout_marginLeft="@dimen/sp18"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/title"/>
 
@@ -42,7 +42,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next"
+            android:text="@string/next"
             android:id="@+id/next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

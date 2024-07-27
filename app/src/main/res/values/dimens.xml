@@ -11,4 +11,11 @@
     <dimen name="dp20">20dp</dimen>
     <dimen name="sp20">20sp</dimen>
     <dimen name="dp15">15dp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp14">14sp</dimen>
+    <dimen name="dp60">60dp</dimen>
+    <dimen name="dp290">290dp</dimen>
+    <dimen name="dp120">120dp</dimen>
+    <dimen name="dp250">250dp</dimen>
+    <dimen name="dp180">180dp</dimen>
 </resources>

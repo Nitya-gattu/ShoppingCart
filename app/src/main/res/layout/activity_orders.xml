@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="@string/SHOPPINGAPPLICATION"
+        android:text="@string/SuperCart"
         android:id="@+id/title"
         android:textStyle="bold"
         android:textSize="@dimen/sp30"

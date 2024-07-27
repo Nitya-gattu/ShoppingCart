@@ -25,14 +25,14 @@
     <TextView
         android:layout_width="80dp"
         android:layout_height="@dimen/dp50"
-        android:layout_marginRight="@dimen/dp20"
+        android:layout_marginEnd="@dimen/dp20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         android:id="@+id/totalBill"
         app:layout_constraintStart_toEndOf="@+id/txttotalBill"
         tools:layout_editor_absoluteY="0dp"
         android:textColor="@color/red"
-        android:textSize="20sp"
+        android:textSize="@dimen/sp20"
         android:textStyle="bold"
         tools:text="$0"
         tools:ignore="MissingConstraints" />
@@ -54,13 +54,13 @@
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Checkout"
+        android:text="@string/checkout"
         android:id="@+id/checkout"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/dp8"
-        android:background="#82C2DF" />
+        android:background="@color/blue" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

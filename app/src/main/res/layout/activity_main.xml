@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="@string/SHOPPINGAPPLICATION"
+        android:text="@string/SuperCart"
         android:id="@+id/loginheader"
         android:textStyle="bold"
         android:textSize="@dimen/sp30"
@@ -48,7 +48,7 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Email id"
+        android:text="@string/emailId"
         android:layout_marginTop="@dimen/dp10"
         android:id="@+id/emailtxt"
         app:layout_constraintStart_toEndOf="@+id/gV10"

@@ -69,6 +69,9 @@ class DetailsActivity : AppCompatActivity() {
 
 
                 reviewRecyclerview.layoutManager = LinearLayoutManager(this@DetailsActivity)
+                if(it.reviews.isEmpty()){
+                    Toast.makeText(this@DetailsActivity, "No reviews for this product", Toast.LENGTH_LONG).show()
+                }
                 reviewRecyclerview.adapter = ReviewAdapter(it.reviews)
 
             }

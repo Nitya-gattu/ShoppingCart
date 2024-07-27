@@ -47,6 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp10"
                     android:text=" 🔍"
                     android:id="@+id/search"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +67,6 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             tools:text="search fragment"
             tools:ignore="MissingConstraints" />
-
 
 
 
