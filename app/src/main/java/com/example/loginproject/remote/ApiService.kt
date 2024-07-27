@@ -3,6 +3,8 @@ package com.example.loginproject.remote
 import com.example.loginproject.checkout.checkoutfragments.model.AddDeliveryAddress
 import com.example.loginproject.checkout.checkoutfragments.model.GetDeliveryResponse
 import com.example.loginproject.data.GetProductsCategory
+import com.example.loginproject.data.orderdata.GetOrderResponse
+import com.example.loginproject.data.orderdata.PostOrder
 import com.example.loginproject.data.searchdata.GetSearchResponse
 import com.example.loginproject.data.subcategory.SubcategoryResponse
 import com.example.loginproject.data.subcategoryproducts.GetProductsListResponse
@@ -55,4 +57,10 @@ interface ApiService {
     fun addAddress(
         @Body deliveryAddress: AddDeliveryAddress
     ): Call<GetDeliveryResponse>
+
+    @Headers("Content-type: application/json")
+    @POST("Order")
+    fun placeOrder(
+        @Body order: PostOrder
+    ):Call<GetOrderResponse>
 }
