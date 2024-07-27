@@ -35,7 +35,7 @@ class OrdersViewModel() : ViewModel(){
             }
 
             override fun onFailure(p0: Call<GetOrdersResponse>, p1: Throwable) {
-                TODO("Not yet implemented")
+                _error.postValue(p1.printStackTrace().toString())
             }
 
         })
