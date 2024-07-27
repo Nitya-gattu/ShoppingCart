@@ -37,7 +37,14 @@ SuperCart is built using the MVVM architecture, ensuring a clear separation of c
 - **Menus and Dialogs**: Enhance user interactions and provide contextual options.
 
 ## Screenshots
-
+![cart](https://github.com/user-attachments/assets/11db39f0-381e-4c6e-8a68-20a2abe3a7f8)
+![dashboard](https://github.com/user-attachments/assets/6d8c3e27-d44f-426b-ba64-4e98ce3a6cc8)
+![details](https://github.com/user-attachments/assets/7607f212-e3f7-4bd1-93aa-79711c3a4a76)
+![login](https://github.com/user-attachments/assets/a4effc95-726c-429b-b544-7cbe28489d8b)
+![logout](https://github.com/user-attachments/assets/8886ff06-f304-47d8-9c88-b3766f6e88f4)
+![menu](https://github.com/user-attachments/assets/069ea198-e362-426b-8b70-de24bd5b231a)
+![register](https://github.com/user-attachments/assets/ff67df78-84c0-4af8-8f21-4d9cd4737461)
+![search](https://github.com/user-attachments/assets/559204a5-01cd-4845-bd86-b01bf8f2505d)
 
 
 ## Installation
