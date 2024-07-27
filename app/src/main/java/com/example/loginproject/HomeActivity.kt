@@ -10,6 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.loginproject.data.GetProductsCategory
 import com.example.loginproject.databinding.ActivityHomeActivityBinding
+import com.example.loginproject.orders.view.OrdersActivity
 import com.example.loginproject.productadapter.ShoppingItemAdapter
 import com.example.loginproject.remote.ApiClient
 import com.example.loginproject.remote.ApiService
@@ -70,6 +71,7 @@ class HomeActivity : AppCompatActivity() {
                     startActivity(Intent(this, TotalBillActivity::class.java))
                 }
                 R.id.menu_orders ->{
+                    startActivity(Intent(this, OrdersActivity::class.java))
 
                 }
                 R.id.menu_logout ->{
