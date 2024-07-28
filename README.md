@@ -8,11 +8,8 @@ SuperCart is an advanced Android application developed in Kotlin, employing the 
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Libraries and Tools](#libraries-and-tools)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [Dependencies](#dependencies)
+
 
 ## Overview
 SuperCart is designed to offer an efficient and user-friendly shopping experience on Android devices. The application supports functionalities like user authentication, product browsing, detailed product descriptions, cart management, and order placement, all implemented using modern development practices.
@@ -46,10 +43,45 @@ SuperCart is built using the MVVM architecture, ensuring a clear separation of c
 ![register](https://github.com/user-attachments/assets/ff67df78-84c0-4af8-8f21-4d9cd4737461)
 ![search](https://github.com/user-attachments/assets/559204a5-01cd-4845-bd86-b01bf8f2505d)
 
-
+## Dependencies
+ ```bash
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    
+    // Navigation Component
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    
+    // ViewModel and LiveData
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    
+    // Room Database
+    implementation 'androidx.room:room-runtime:2.3.0'
+    kapt 'androidx.room:room-compiler:2.3.0'
+    implementation 'androidx.room:room-ktx:2.3.0'
+    
+    // Retrofit for network calls
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    
+    // Picasso for image loading
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
+```
 ## Installation
 
 To install and run the SuperCart app, follow these detailed steps:
 
 1. **Clone the repository**:
    ```bash
+   git clone https://github.com/Nitya-gattu/ShoppingCart.git
